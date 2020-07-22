@@ -1,3 +1,6 @@
-module.exports = {
-  key: process.env.MOVIE_API_KEY,
-};
+if (process.env.NODE_ENV === 'production') {
+  console.log(require('./prod'));
+  module.exports = require('./prod');
+} else {
+  module.exports = require('./dev');
+}
