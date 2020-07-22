@@ -5,7 +5,8 @@ export default function SearchMovies() {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
-  const apikey = require('./config/keys').key;
+  // const apikey = require('./config/keys').key;
+  const apikey = 'f13708d53b2189d7a9d9bff98a247372';
 
   const searchMovies = async (e) => {
     e.preventDefault();
