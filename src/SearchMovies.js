@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import MovieCard from './MovieCard';
-import { MOVIE_API_KEY } from './keys.js';
 
 export default function SearchMovies() {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
+  const apikey = require('./config/keys').key;
+
   const searchMovies = async (e) => {
     e.preventDefault();
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apikey}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const res = await fetch(url);
